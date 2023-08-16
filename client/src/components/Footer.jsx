@@ -1,19 +1,27 @@
 import React from "react";
-
+import './footer.css'
 const Footer = () => {
   return (
     <>
-      <footer className="mb-0 text-center">
-        <div className="d-flex align-items-center justify-content-center pb-5">
-          <div className="col-md-6">
-            <p className="mb-3 mb-md-0">Made with ❤️ by {" "}
-              <a  href="https://winhtoonaing.github.io/PLPS-website" className="text-decoration-underline text-dark fs-5" target="_blank" rel="noreferrer">Win Htoo Naing</a>
-            </p>
-            <a className="text-dark fs-4" href="https://github.com/winhtoonaing" target="_blank" rel="noreferrer">
-              <i className="fa fa-github"></i>
-            </a>
-          </div>
+      <footer className="footer-container" >
+        <p className='footer-copyright'><i>Copyright &copy; 2022-2023 by our Data. All Rights Reserved.</i></p>
+        <div className="logo-container">
+        <i className="fa-brands fa-facebook"></i>
+        <i className="fa-brands fa-youtube"></i>
+        <i className="fa-brands fa-twitter"></i>
+        <i className="fa-brands fa-tiktok"></i>
+        <i className="fa-brands fa-instagram"></i>
         </div>
+        <div className="condition">
+          <a href="#">FAQs</a>--
+          <a href="#">Privacy Policy</a>--
+          <a href="#">Terms & Conditions</a>--
+          <a href="#">Web Assessibility Statement</a>
+        </div>
+        <p className="personal">Design and Content by <a href="http://winhtoonaing.github.io/personal-portfolio">Win Htoo Naing</a></p>
+        <p className="follow">follow me <a href="https://github.com/WinHtooNaing"><i className="fa-brands fa-github"></i></a></p>
+      
+       
       </footer>
     </>
   );

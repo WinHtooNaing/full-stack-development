@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/login",{
+
+// mongodb altas = "mongodb+srv://winhtoonaing2003:phamana252313@cluster0.jczvf6q.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect("mongodb://127.0.0.1:27017/school",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })

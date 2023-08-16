@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import Data from "../Data";
 
-import Skeleton from "react-loading-skeleton";
+
 import "react-loading-skeleton/dist/skeleton.css";
 
 import { Link } from "react-router-dom";
 
 const Products = () => {
-  const [data, setData] = useState([]);
-  const [filter, setFilter] = useState(data);
-  const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+  const [filter, setFilter] = useState(Data);
+  
 
   const dispatch = useDispatch();
 
@@ -19,72 +18,20 @@ const Products = () => {
     dispatch(addCart(product))
   }
 
-  useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
-        setLoading(false);
-      }
+ 
 
-      return () => {
-        componentMounted = false;
-      };
-    };
-
-    getProducts();
-  }, []);
-
-  const Loading = () => {
-    return (
-      <>
-        <div className="col-12 py-5 text-center">
-          <Skeleton height={40} width={560} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-      </>
-    );
-  };
+ 
 
   const filterProduct = (cat) => {
-    const updatedList = data.filter((item) => item.category === cat);
+    const updatedList = Data.filter((item) => item.category === cat);
     setFilter(updatedList);
   }
-  const ShowProducts = () => {
+  const ShowProducts = (product) => {
     return (
       <>
-        <div className="buttons text-center py-5">
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("women's clothing")}>
-            Women's Clothing
-          </button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("electronics")}>Electronics</button>
-        </div>
 
-        {filter.map((product) => {
-          return (
-            <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
+       
+            <div  id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
               <div className="card text-center h-100" key={product.id}>
                 <img
                   className="card-img-top p-3"
@@ -94,7 +41,7 @@ const Products = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">
-                    {product.title.substring(0, 12)}...
+                    {product.title}
                   </h5>
                   <p className="card-text">
                     {product.description.substring(0, 90)}...
@@ -106,7 +53,7 @@ const Products = () => {
                     <li className="list-group-item">Vestibulum at eros</li> */}
                 </ul>
                 <div className="card-body">
-                  <Link to={"/product/" + product.id} className="btn btn-dark m-1">
+                  <Link to={`/product/${product.id}`} className="btn btn-dark m-1">
                     Buy Now
                   </Link>
                   <button className="btn btn-dark m-1" onClick={() => addProduct(product)}>
@@ -116,8 +63,7 @@ const Products = () => {
               </div>
             </div>
 
-          );
-        })}
+         
       </>
     );
   };
@@ -130,8 +76,18 @@ const Products = () => {
             <hr />
           </div>
         </div>
+        <div className="buttons text-center py-5" key={Data.id}>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => setFilter(Data)}>All</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Premier League")}>Premier League</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("La Liga")}>
+            La Liga
+          </button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Serie A")}>Serie A</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Bundesliga")}>Bundesliga</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Other")}>Other</button>
+        </div>
         <div className="row justify-content-center">
-          {loading ? <Loading /> : <ShowProducts />}
+          {filter.map(ShowProducts)}
         </div>
       </div>
     </>

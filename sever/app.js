@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cors())
 
 
-app.get("/mainpage",cors(),(req,res)=> {
+app.get("/",cors(),(req,res)=> {
    
 })
 
@@ -37,6 +37,7 @@ app.post("/register",(req,res)=> {
     })
     .catch(err => res.json(err))
 })
+
 
 app.listen(8000, ()=> {
     console.log("port connected")

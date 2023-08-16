@@ -9,52 +9,43 @@ const Aboutmainpage = () => {
         <h1 className="text-center">About Us</h1>
         <hr />
         <p className="lead text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          facere doloremque veritatis odit similique sequi. Odit amet fuga nam
-          quam quasi facilis sed doloremque saepe sint perspiciatis explicabo
-          totam vero quas provident ipsam, veritatis nostrum velit quos
-          recusandae est mollitia esse fugit dolore laudantium. Ex vel explicabo
-          earum unde eligendi autem praesentium, doloremque distinctio nesciunt
-          porro tempore quis eaque labore voluptatibus ea necessitatibus
-          exercitationem tempora molestias. Ad consequuntur veniam sequi ullam
-          tempore vel tenetur soluta dolore sunt maxime aliquam corporis est,
-          quo saepe dolorem optio minus sint nemo totam dolorum! Reprehenderit
-          delectus expedita a alias nam recusandae illo debitis repellat libero,
-          quasi explicabo molestiae saepe, dolorem tempore itaque eveniet quam
-          dignissimos blanditiis excepturi harum numquam vel nihil? Ipsum
+        Welcome to our Y2K page, where we delve into the fascinating world of football fashion during the turn of the millennium. The Y2K era, spanning from the late 1990s to the early 2000s, was a time of unique designs, bold colors, and a distinct fusion of style and sport. Join us on a journey through the most iconic football shirts that captured the spirit of an unforgettable era.
+        During the Y2K era, football shirts transcended the boundaries of the pitch and became symbols of cultural expression. With vibrant patterns, experimental color combinations, and innovative designs, these shirts not only represented the teams on the field but also showcased the trends and attitudes of the times.
+        As we step back in time, we witness the evolution of football kits. From the sleek and classic designs of the 1990s to the bold and daring aesthetics of the early 2000s, each year brought a new interpretation of football fashion that left a lasting impact.
+        The Y2K era witnessed some of the most unforgettable moments in football history. Whether it was the rise of certain teams to dominance, legendary players showcasing their skills, or historical matches that still resonate today, the football shirts from this period serve as timeless reminders of these milestones.
         </p>
 
         <h2 className="text-center py-4">Our Products</h2>
         <div className="row">
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img className="card-img-top img-fluid" src="./assets/home/permierleague.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Mens's Clothing</h5>
+                <h5 className="card-title text-center">Premier League</h5>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img className="card-img-top img-fluid" src="./assets/home/laliga.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Women's Clothing</h5>
+                <h5 className="card-title text-center">Laliga</h5>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img className="card-img-top img-fluid" src="./assets/home/serieA.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Jewelery</h5>
+                <h5 className="card-title text-center">Serie A</h5>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img className="card-img-top img-fluid" src="./assets/home/bundesliga.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Electronics</h5>
+                <h5 className="card-title text-center">Others</h5>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ const Checkout = () => {
     
   setpaynow(swheel)
     setTimeout(() => {
-      setpaynow(<div style={{display: "flex" ,flexDirection: "row",justifyContent: "center" , alignItems: "center"}} ><i class="fa-solid fa-check" style={{fontSize:"20px"}}></i> <p style={{marginLeft:"10px",marginTop:"5px",fontSize:"20px"}}>success</p></div>);
+      setpaynow(<div style={{display: "flex" ,flexDirection: "row",justifyContent: "center" , alignItems: "center"}} ><i className="fa-solid fa-check" style={{fontSize:"20px"}}></i> <p style={{marginLeft:"10px",marginTop:"5px",fontSize:"20px"}}>success</p></div>);
     }, 3000);
   };
   const EmptyCart = () => {

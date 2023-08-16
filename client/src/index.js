@@ -12,6 +12,7 @@ import Mainpage from './pages/Mainpage';
 import MainNavbar from './pages/MainNavbar';
 import Aboutmainpage from './pages/Aboutmainpage';
 import Contactmainpage from './pages/Contactmainpage';
+import Helpmainpage from './pages/Helpmainpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,9 +22,10 @@ root.render(
       <Routes>
       <Route path="/contactmainpage" element={<Contactmainpage />} />
       <Route path="/aboutmainpage" element={<Aboutmainpage />} />
+      <Route path="/helpmainpage" element={<Helpmainpage />} />
       <Route path="/mainnavbar" element={<MainNavbar />} />
-      <Route path="/mainpage" element={<Mainpage />} />
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Mainpage />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/about" element={<AboutPage />} />
